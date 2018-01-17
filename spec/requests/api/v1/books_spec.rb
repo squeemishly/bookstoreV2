@@ -11,6 +11,7 @@ describe 'Bookstore API' do
     expect(response).to be_success
     expect(book["id"]).to eq id
     expect(book["title"]).to eq "fake title"
+    expect(book["genre"]).to eq "fake genre"
     expect(book["location"]).to eq "fake location"
   end
 end
