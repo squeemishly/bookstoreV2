@@ -1,5 +1,6 @@
 class Api::V1::BooksController < ApplicationController
   def show
-    render json: Book.find(params[:id])
+    payload = Book.find_book(params[:id])
+    render json: payload
   end
 end
