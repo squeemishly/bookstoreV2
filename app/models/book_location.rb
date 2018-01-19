@@ -1,4 +1,4 @@
 class BookLocation < ApplicationRecord
-  belongs_to :books, optional: true
-  belongs_to :locations, optional: true
+  belongs_to :book, optional: true
+  belongs_to :location, optional: true
 end
