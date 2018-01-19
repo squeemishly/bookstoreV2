@@ -1,5 +1,6 @@
 class Api::V1::LocationsController < ApplicationController
   def show
-    render json: Location.find(params[:id])
+    payload = Location.find_books(params[:id])
+    render json: payload
   end
 end
