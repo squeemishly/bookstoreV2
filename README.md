@@ -6,6 +6,20 @@ Commit/comment when/how you naturally would and when you're finished submit a pu
 
 Any questions feel free to ping me
 
+### API Endpoints
+
+- GET "/api/v1/books/:book_id"
+
+Returns a single book with the id, title, and genre of the book. It also returns any locations where that title is.
+
+- GET "/api/v1/locations/:location_id"
+
+Returns a single location with the id, name, and any books currently housed in that location.
+
+- PUT "/api/v1/book_locations/:book_location.id/locations/:new_location_id"
+
+Updates the location of the book to a new location. It returns the book id, title, and genre and all locations of the book.
+
 ### Description
 
 I have a bookstore. My bookstore has 6 shelves and 4 tables. I also have 'the back' where I put all the books I don't have on display. Customers may also come in to purchase my books.
