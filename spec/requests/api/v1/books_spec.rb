@@ -37,7 +37,7 @@ describe 'Bookstore API' do
   it 'can move books from one location to another' do
     new_location_id = create(:location, name: "fake second location").id
 
-    put "/api/v1/books/#{book_id}/locations/#{new_location_id}"
+    put "/api/v1/book_locations/#{book_location.id}/locations/#{new_location_id}"
 
     book = JSON.parse(response.body, symbolize_names: true)
 
