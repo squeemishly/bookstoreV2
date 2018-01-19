@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :books, only: [:show] do
+      resources :books, only: [:show]
+      resources :locations, only: [:show]
+      resources :book_locations, only: [:show] do
         resources :locations, only: [:update]
       end
-      resources :locations, only: [:show]
     end
   end
 end

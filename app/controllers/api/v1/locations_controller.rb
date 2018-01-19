@@ -5,7 +5,7 @@ class Api::V1::LocationsController < ApplicationController
   end
 
   def update
-    payload = BookLocation.move_book(params[:book_id], params[:id])
+    payload = BookLocation.move_book(params[:book_location_id], params[:id])
     render json: payload
   end
 end
