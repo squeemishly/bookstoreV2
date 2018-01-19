@@ -18,7 +18,8 @@ describe 'Bookstore API' do
     expect(book[:id]).to eq book_id
     expect(book[:title]).to eq "fake title"
     expect(book[:genre]).to eq "fake genre"
-    expect(book[:locations]).to eq ["fake location"]
+    expect(book[:locations]).to be_a Array
+    expect(book[:locations].first).to eq "fake location"
   end
 
   it 'can get a location and show all the books in that location' do
@@ -27,5 +28,12 @@ describe 'Bookstore API' do
     location = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_success
+    expect(location[:id]).to eq location_id
+    expect(location[:name]).to eq "fake location"
+    expect(location[:books]).to be_a Array
+    expect(location[:books].first).to be_a Hash
+    expect(location[:books].first[:id]).to eq book_id
+    expect(location[:books].first[:title]).to eq "fake title"
+    expect(location[:books].first[:genre]).to eq "fake genre"
   end
 end
